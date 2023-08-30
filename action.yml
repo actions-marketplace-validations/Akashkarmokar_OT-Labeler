@@ -1,0 +1,7 @@
+name: "CI-CD boilerplate"
+description: "Practice project to learn custom CI-CD also make it as a boilerplate"
+author: "Akash"
+
+runs:
+  using: "node16"
+  main: "dist/index.js"
