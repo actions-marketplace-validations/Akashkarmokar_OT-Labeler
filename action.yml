@@ -2,6 +2,12 @@ name: "CI-CD boilerplate"
 description: "Practice project to learn custom CI-CD also make it as a boilerplate"
 author: "Akash"
 
+inputs:
+  name:
+    description: "The name to say hello to"
+    required: true
+    default: "Akash"
+
 runs:
   using: "node16"
   main: "dist/index.js"
