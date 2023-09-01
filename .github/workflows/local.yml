@@ -24,5 +24,5 @@ jobs:
       - name: Run Tests
         run: npm test
         env:
-          GH-TOKEN": 'secret-token-123456'
-          LABEL": 'needs-review'
+            INPUT_GH-TOKEN: "secret-token-123456"
+            INPUT_LABEL: "needs-review"
