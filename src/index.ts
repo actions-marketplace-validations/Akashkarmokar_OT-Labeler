@@ -1,7 +1,7 @@
 import { getInput, setFailed } from "@actions/core";
 import { context, getOctokit } from "@actions/github";
 
-async function run (){
+export async function run (){
     const token = getInput('gh-token')
     const label = getInput('label')
 
@@ -10,12 +10,12 @@ async function run (){
 
     try {
         if (!pullRequest){
-            throw new Error('This action can only be run on Pull Request !!')
+            throw new Error('This action can only be run on Pull Requests')
         }
         console.log({ context })
         console.log("Owner Info: ", context.repo.owner);
         console.log("Repository Info: ", context.repo.repo);
-        
+
         await octokit.rest.issues.addLabels({
             owner: context.repo.owner,
             repo: context.repo.repo,
@@ -27,4 +27,6 @@ async function run (){
     }
 }
 
-run ()
+if (!process.env.JEST_WORKER_ID){
+    run ()
+}
