@@ -9840,7 +9840,9 @@ async function run() {
     }
 }
 exports.run = run;
-run();
+if (!process.env.JEST_WORKER_ID) {
+    run();
+}
 
 })();
 
