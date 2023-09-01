@@ -9820,19 +9820,30 @@ async function run() {
     const token = (0, core_1.getInput)('gh-token');
     const label = (0, core_1.getInput)('label');
     const octokit = (0, github_1.getOctokit)(token);
-    const pullRequest = github_1.context.payload.pull_request;
+    const pullRequest = github_1.context.payload
+        .pull_request;
     try {
         if (!pullRequest) {
             throw new Error('This action can only be run on Pull Requests');
         }
-        console.log({ context: github_1.context });
-        console.log("Owner Info: ", github_1.context.repo.owner);
-        console.log("Repository Info: ", github_1.context.repo.repo);
+        console.log({
+            context: github_1.context,
+        });
+        console.log('Owner Info: ', github_1.context.repo
+            .owner);
+        console.log('Repository Info: ', github_1.context.repo
+            .repo);
         await octokit.rest.issues.addLabels({
-            owner: github_1.context.repo.owner,
-            repo: github_1.context.repo.repo,
+            owner: github_1.context
+                .repo
+                .owner,
+            repo: github_1.context
+                .repo
+                .repo,
             issue_number: pullRequest.number,
-            labels: [label],
+            labels: [
+                label,
+            ],
         });
     }
     catch (error) {
@@ -9840,7 +9851,8 @@ async function run() {
     }
 }
 exports.run = run;
-if (!process.env.JEST_WORKER_ID) {
+if (!process.env
+    .JEST_WORKER_ID) {
     run();
 }
 
