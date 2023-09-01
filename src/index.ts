@@ -13,6 +13,9 @@ async function run (){
             throw new Error('This action can only be run on Pull Request !!')
         }
         console.log({ context })
+        console.log("Owner Info: ", context.repo.owner);
+        console.log("Repository Info: ", context.repo.repo);
+        
         await octokit.rest.issues.addLabels({
             owner: context.repo.owner,
             repo: context.repo.repo,
