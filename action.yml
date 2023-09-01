@@ -3,10 +3,12 @@ description: "Practice project to learn custom CI-CD also make it as a boilerpla
 author: "Akash"
 
 inputs:
-  name:
-    description: "The name to say hello to"
+  gh-token:
+    description: 'The Github token for authentication'
     required: true
-    default: "Akash"
+  label:
+    description: 'The label to be applied to the pull request'
+    required: true
 
 runs:
   using: "node16"

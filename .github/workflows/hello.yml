@@ -1,6 +1,8 @@
 name: "Hello"
 
 on:
+    pull_request:
+        types: [opened, reopened]
     workflow_dispatch:
     
 jobs:
@@ -10,4 +12,6 @@ jobs:
             - uses: actions/checkout@v2
             - uses: ./
               with:
-                name: "karmokar"
+                gh-token: ${{ secrets.GITHUB_TOKEN }}
+                label: 'needs-review'
+                
