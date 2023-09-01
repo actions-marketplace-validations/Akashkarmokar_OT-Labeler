@@ -1,37 +1,22 @@
-import {
-  getInput,
-  setFailed,
-} from '@actions/core';
-import {
-  context,
-  getOctokit,
-} from '@actions/github';
+import { getInput, setFailed } from '@actions/core';
+import { context, getOctokit } from '@actions/github';
 
 export async function run() {
   const token = getInput('gh-token');
   const label = getInput('label');
 
   const octokit = getOctokit(token);
-  const pullRequest =
-    context.payload.pull_request;
+  const pullRequest = context.payload.pull_request;
 
   try {
     if (!pullRequest) {
-      throw new Error(
-        'This action can only be run on Pull Requests'
-      );
+      throw new Error('This action can only be run on Pull Requests');
     }
     console.log({
       context,
     });
-    console.log(
-      'Owner Info: ',
-      context.repo.owner
-    );
-    console.log(
-      'Repository Info: ',
-      context.repo.repo
-    );
+    console.log('Owner Info: ', context.repo.owner);
+    console.log('Repository Info: ', context.repo.repo);
 
     await octokit.rest.issues.addLabels({
       owner: context.repo.owner,
@@ -40,9 +25,7 @@ export async function run() {
       labels: [label],
     });
   } catch (error) {
-    setFailed(
-      (error as Error)?.message ?? 'Unknown error'
-    );
+    setFailed((error as Error)?.message ?? 'Unknown error');
   }
 }
 
