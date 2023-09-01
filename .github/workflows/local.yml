@@ -23,6 +23,4 @@ jobs:
         run: npm ci
       - name: Run Tests
         run: npm test
-        env:
-            INPUT_GH-TOKEN: "secret-token-123456"
-            INPUT_LABEL: "needs-review"
+        
