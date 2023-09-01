@@ -131,3 +131,4 @@ out
 
 # MY-CUSTOM
 package-lock.json
+.lib
