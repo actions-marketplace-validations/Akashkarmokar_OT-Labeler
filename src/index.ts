@@ -12,9 +12,7 @@ export async function run() {
     if (!pullRequest) {
       throw new Error('This action can only be run on Pull Requests');
     }
-    console.log({
-      context,
-    });
+    console.log({ context });
     console.log('Owner Info: ', context.repo.owner);
     console.log('Repository Info: ', context.repo.repo);
 
