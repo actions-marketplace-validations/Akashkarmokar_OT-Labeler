@@ -1,4 +1,4 @@
-name: Local Branch
+name: Main Branch
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  local_branch:
+  main_branch:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Branch
