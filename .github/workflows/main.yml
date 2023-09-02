@@ -3,10 +3,10 @@ name: Main Branch
 on:
   push:
     branches:
-      - local
+      - main
   pull_request:
     branches:
-      - local
+      - main
   workflow_dispatch:
 
 jobs:
