@@ -21,5 +21,7 @@ jobs:
           node-version: latest
       - name: Install Dependencies
         run: npm install
+      - name: Check Linting
+        run: npm run lint
       - name: Run Tests
         run: npm test
