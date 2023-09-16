@@ -1,6 +1,6 @@
 # Labeler
 
-To label your every pull request on your current project this github action help you.
+To label your every pull request on your current project this github action will help you.
 
 
 
