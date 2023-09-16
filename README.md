@@ -5,5 +5,5 @@ To label your every pull request on your current project this github action help
 
 
 ## 🚀 About Me
-I'm a full stack developer who love to work on backend technologies most of the time.
+I'm a Software Developer who love to work on backend technologies most of the time.
 
